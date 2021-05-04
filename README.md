@@ -1,4 +1,5 @@
-# gestaoAnuncios
+# Gestão de Anúncios
+
 Software para gerir anúncios e calcular projeções:
 
 1)Baixe o repositório;
