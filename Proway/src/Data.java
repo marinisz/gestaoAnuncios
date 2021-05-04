@@ -9,9 +9,9 @@ public class Data {
     private int mes;
 
     Data(){
-        ano=2000;
-        dia=1;
-        mes=1;
+        ano=2021;
+        dia=10;
+        mes=12;
     }
 
     Data(int diaA,int mesB,int anoC){
@@ -48,8 +48,8 @@ public class Data {
         Scanner lerEntrada = new Scanner(System.in);
         System.out.print("Ano: ");
         this.setAno(lerEntrada.nextInt());
-        while(this.getAno()<1900){
-            System.out.print("Favor inserir um ano após 1900: ");
+        while(this.getAno()<2021){
+            System.out.print("Favor inserir um ano após 2021: ");
             this.setAno(lerEntrada.nextInt());
         }
         System.out.print("Mes: ");
