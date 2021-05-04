@@ -1,4 +1,6 @@
 # gestaoAnuncios
 Software para gerir anúncios e calcular projeções
-
-Para executar basta ir na classe App e iniciar o programa;
+1)Baixe o repositório;
+2)Entre em sua IDE de preferência;
+3)Busque a classe App.java;
+4)Para executar basta iniciar a main;
