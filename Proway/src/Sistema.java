@@ -27,8 +27,11 @@ public class Sistema {
             System.out.println("|1) para Cadastrar Anuncio|\n" + "|2) para buscar Cliente|\n"+ "|3) para buscar Data|\n"+ "|4) para listar anuncios|\n"+"|5) para sair|");
             System.out.print("Opcao: ");
             op = teclado.nextInt();
-            if(op==1)anuncio.usuarioInsereAnuncio();
-            if(op==2)filtraAnuncioCliente();
+            if(op==1){
+                anuncio.usuarioInsereAnuncio();
+                lista.add(anuncio);
+            }
+            if(op==2)this.filtraAnuncioCliente();
             if(op==3)this.filtraDatas();
             if(op==4)this.imprimeAnuncios();
             }
