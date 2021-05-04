@@ -18,26 +18,24 @@ public class Sistema {
     public void menu(){
         Anuncio anuncio = new Anuncio();
         Scanner teclado = new Scanner(System.in);
-        System.out.println("Gestão de anuncios");
-        System.out.println("Digite 1 para Cadastrar Anuncio\n" + "Digite 2 para buscar Cliente\n"+ "Digite 3 para buscar Data\n"+ "Digite 4 para listar anuncios\n"+"Digite 5 para sair\n");
-        int op = teclado.nextInt();
-        if (op == 5) {
-            System.out.print("\nAté logo!");
-            teclado.close();
+        System.out.println("Gestão de anuncios\nO que deseja fazer?");
+        System.out.println("|1) para Cadastrar Anuncio|\n" + "|2) para buscar Cliente|\n"+ "|3) para buscar Data|\n"+ "|4) para listar anuncios|\n"+"|5) para sair|\n");
+        int op=0;
+        while(op!=5){
+            System.out.print("Opcao: ");
+            op = teclado.nextInt();
+            switch (op){
+                case 1: anuncio.usuarioInsereAnuncio();
+                    break;
+                case 2: this.filtraAnuncioCliente();
+                    break;
+                case 3: this.filtraDatas();
+                    break;
+                case 4: this.imprimeAnuncios();
+                    break;
+            }
         }
-        switch (op){
-            case 1: anuncio.usuarioInsereAnuncio();
-                break;
-            case 2: this.filtraAnuncioCliente();
-                break;
-            case 3: this.filtraDatas();
-                break;
-            case 4: this.imprimeAnuncios();
-                break;
-            default:
-                System.out.println("Numéro inválido!");
-                break;
-        }
+
     }
 
     public void filtraAnuncioCliente(){
