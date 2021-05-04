@@ -9,3 +9,5 @@ Software para gerir anúncios e calcular projeções:
 3)Busque a classe App.java;
 
 4)Para executar basta iniciar a main;
+
+5)Abrirá um menu de opções para serem executadas;
