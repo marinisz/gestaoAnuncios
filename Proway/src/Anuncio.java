@@ -128,22 +128,23 @@ public class Anuncio {
         System.out.println("Shares: "+getShares());
         System.out.println("Cliques: "+getCliques());
         int dif = this.getDataInicio().diferencaDatas(this.getDataInicio(),this.getDataFim());
-        System.out.println("Anúncio funcionará por "+dif+"dias");
+        System.out.println("Anúncio funcionará por "+dif+" dias");
     }
 
     public void usuarioInsereAnuncio(){
         Scanner teclado = new Scanner(System.in);
         System.out.println("Preencha os dados do seu anuncio: ");
-        System.out.println("Nome do Anuncio: ");
+        System.out.print("Nome do Anuncio: ");
         String nome = teclado.nextLine();
-        System.out.println("Anunciante: ");
+        System.out.print("Anunciante: ");
         String cliente = teclado.nextLine();
-        System.out.println("Verba para anúncio: ");
+        System.out.print("Verba para anúncio: ");
         float verba = teclado.nextFloat();
-        System.out.println("Data de inicio: ");
+
+        System.out.print("Data de inicio: ");
         Data dataInicio = new Data();
         dataInicio.dataEntrada();
-        System.out.println("Data final: ");
+        System.out.print("Data final: ");
         Data dataFim = new Data();
         dataFim.dataEntrada();
 

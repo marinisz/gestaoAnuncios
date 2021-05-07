@@ -46,18 +46,6 @@ public class Data {
 
     public void dataEntrada(){//usuario informa a data
         Scanner lerEntrada = new Scanner(System.in);
-        System.out.print("Ano: ");
-        this.setAno(lerEntrada.nextInt());
-        while(this.getAno()<2021){
-            System.out.print("Favor inserir um ano após 2021: ");
-            this.setAno(lerEntrada.nextInt());
-        }
-        System.out.print("Mes: ");
-        this.setMes(lerEntrada.nextInt());
-        while(this.getMes()<=0 || this.getMes()>12){
-            System.out.print("Favor inserir um mes entre 1 e 12:");
-            this.setMes(lerEntrada.nextInt());
-        }
         System.out.print("Dia: ");
         this.setDia(lerEntrada.nextInt());
         while(this.getMes()>31||this.getMes()<=0){
@@ -75,6 +63,20 @@ public class Data {
                 System.out.print("Favor inserir um dia válido: ");
             }
         }
+        System.out.print("Mes: ");
+        this.setMes(lerEntrada.nextInt());
+        while(this.getMes()<=0 || this.getMes()>12){
+            System.out.print("Favor inserir um mes entre 1 e 12:");
+            this.setMes(lerEntrada.nextInt());
+        }
+        System.out.print("Ano: ");
+        this.setAno(lerEntrada.nextInt());
+        while(this.getAno()<2021){
+            System.out.print("Favor inserir um ano após 2021: ");
+            this.setAno(lerEntrada.nextInt());
+        }
+
+
     } //Usuário insere a data
 
     public boolean isBissexto(){

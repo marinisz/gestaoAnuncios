@@ -1,3 +1,5 @@
+import javax.sound.midi.Soundbank;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
@@ -40,9 +42,10 @@ public class Sistema {
 
     public void filtraAnuncioCliente(){
         Scanner teclado = new Scanner(System.in);
+        System.out.println("Nome do cliente: ");
         String cliente = teclado.next();
         cliente = cliente.toUpperCase(Locale.ROOT);
-        boolean resp = false;
+        boolean resp = true;
         int n = lista.size();
         int aux = 0;
         for(int i = 0;i<n;i++){
@@ -50,7 +53,12 @@ public class Sistema {
                 resp=true;
                 aux = i;
                 i=n;
+            }else{
+                resp=false;
             }
+        }
+        if(resp=false){
+            System.out.println("Não encontramos nada");
         }
         lista.get(aux).imprime();
     }
@@ -58,19 +66,26 @@ public class Sistema {
     public void filtraDatas(){
         Data a = new Data();
         Data b = new Data();
+        System.out.print("Data inicio -> ");
         a.dataEntrada();
+        System.out.print("Data final -> ");
         b.dataEntrada();
         int dif = a.diferencaDatas(a,b);
         Data recente = a.mostraRecente(a,b);
         int i = 0;
+        boolean achou = false;
         while(i <dif){
-            for(int j = 0;j<lista.size();i++){
-                if(lista.get(j).getDataInicio().igualData(lista.get(j).getDataInicio(),recente)){
+            for(int j = 0;j<lista.size();j++){
+                if(lista.get(j).getDataInicio().igualData(lista.get(j).getDataInicio(),recente)) {
                     lista.get(j).imprime();
                     i++;
                     recente.adicionaDias(1);
+                    achou = true;
                 }
             }
+        }
+        if(achou=false){
+            System.out.println("Não encontramos nada");
         }
     }
 }
