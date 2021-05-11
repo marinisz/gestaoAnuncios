@@ -13,6 +13,9 @@ public class Sistema {
     public void imprimeAnuncios() {
         Arquivo arq = new Arquivo();
         arq.readFile(lista);
+        for(Anuncio a : lista){
+            a.imprime();
+        }
     }
 
     public void menu() {
@@ -40,25 +43,30 @@ public class Sistema {
         System.out.println("Nome do cliente: ");
         String cliente = teclado.next();
         cliente = cliente.toUpperCase(Locale.ROOT);
-        boolean resp = true;
+        boolean resp = false;
+        Arquivo arq = new Arquivo();
+        arq.readFile(lista);
         int n = lista.size();
         int aux = 0;
         for (int i = 0; i < n; i++) {
-            if (lista.get(i).getCliente().toUpperCase(Locale.ROOT) == cliente) {
+            String momento = lista.get(i).getCliente().toUpperCase(Locale.ROOT);
+            if (momento.equals(cliente)) {
                 resp = true;
                 aux = i;
                 i = n;
-            } else {
-                resp = false;
             }
         }
         if (resp = false) {
             System.out.println("Não encontramos nada");
+        }else{
+            lista.get(aux).imprime();
         }
-        lista.get(aux).imprime();
+
     }
 
     public void filtraDatas() {
+        Arquivo arq = new Arquivo();
+        arq.readFile(lista);
         Data a = new Data();
         Data b = new Data();
         System.out.print("Data inicio -> ");

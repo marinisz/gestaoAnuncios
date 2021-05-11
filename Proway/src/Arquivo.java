@@ -33,8 +33,8 @@ public class Arquivo {
             while((s = br.readLine())!=null){
                 Anuncio anuncio = new Anuncio();
                 String[] a =s.split(",");
-                anuncio.setNomeAnuncio(a[0]);
-                anuncio.setCliente(a[1]);
+                anuncio.setCliente(a[0]);
+                anuncio.setNomeAnuncio(a[1]);
                 Data inicio=new Data();
                 inicio = inicio.transformaString(a[2]);
                 anuncio.setDataFim(inicio);
@@ -48,9 +48,6 @@ public class Arquivo {
                 anuncioLista.add(anuncio);
             }
             br.close();
-            for(Anuncio a : anuncioLista){
-                a.imprime();
-            }
         }catch (Exception ex){
             return;
         }
