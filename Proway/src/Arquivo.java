@@ -24,7 +24,6 @@ public class Arquivo {
     }
 
     public void readFile(ArrayList<Anuncio> anuncioLista){
-        Anuncio anuncio = new Anuncio();
         try{
             FileReader fw = new FileReader(path);
             BufferedReader br = new BufferedReader(fw);
@@ -32,6 +31,7 @@ public class Arquivo {
             int cont=0;
             int i = 0;
             while((s = br.readLine())!=null){
+                Anuncio anuncio = new Anuncio();
                 String[] a =s.split(",");
                 anuncio.setNomeAnuncio(a[0]);
                 anuncio.setCliente(a[1]);

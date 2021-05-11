@@ -6,7 +6,6 @@ public class Sistema {
     ArrayList<Anuncio> lista = new ArrayList<Anuncio>();
 
     public void insereAnuncio(Anuncio anuncio) {
-        lista.add(anuncio);
         Arquivo arquivo = new Arquivo();
         arquivo.writeFile(anuncio);
     }
