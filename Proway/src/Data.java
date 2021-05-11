@@ -264,4 +264,10 @@ public class Data {
         }
         return dataAux;
     }
+
+    public Data transformaString(String a){
+        String[] dataSplit =a.split("/");
+        Data data = new Data(Integer.parseInt(dataSplit[0]),Integer.parseInt(dataSplit[1]),Integer.parseInt(dataSplit[2]));
+        return data;
+    }
 }

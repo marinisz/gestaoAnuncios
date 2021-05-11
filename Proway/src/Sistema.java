@@ -1,5 +1,3 @@
-import javax.sound.midi.Soundbank;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
@@ -9,16 +7,13 @@ public class Sistema {
 
     public void insereAnuncio(Anuncio anuncio) {
         lista.add(anuncio);
+        Arquivo arquivo = new Arquivo();
+        arquivo.writeFile(anuncio);
     }
 
     public void imprimeAnuncios() {
-        if (lista.size() == 0) {
-            System.out.println("Não há anúncios cadastrados");
-        }
-        int n = lista.size();
-        for (int i = 0; i < n; i++) {
-            lista.get(i).imprime();
-        }
+        Arquivo arq = new Arquivo();
+        arq.readFile(lista);
     }
 
     public void menu() {
@@ -32,7 +27,7 @@ public class Sistema {
             op = teclado.nextInt();
             if (op == 1) {
                 anuncio.usuarioInsereAnuncio();
-                lista.add(anuncio);
+                insereAnuncio(anuncio);
             }
             if (op == 2) this.filtraAnuncioCliente();
             if (op == 3) this.filtraDatas();
@@ -93,4 +88,6 @@ public class Sistema {
             System.out.println("Não encontramos nenhum anuncio nessa data!");
         }
     }
-}
+    }
+
+
